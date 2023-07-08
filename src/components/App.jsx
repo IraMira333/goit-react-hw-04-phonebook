@@ -11,6 +11,19 @@ export class App extends Component {
     filter: '',
   };
 
+  componentDidMount() {
+    const parsedLSContacts = JSON.parse(localStorage.getItem('contacts'));
+    if (parsedLSContacts) {
+      this.setState({ contacts: parsedLSContacts });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
+
   addContact = ({ name, number }) => {
     const { contacts } = this.state;
 
@@ -58,7 +71,7 @@ export class App extends Component {
 
         <h2>Contacts</h2>
 
-        {filteredContacts > 0 ? (
+        {this.state.contacts.length > 0 ? (
           <Filter onFilterInput={this.onFilterInput} />
         ) : (
           <p className={css.noContact}>You don't have any contact yet</p>
