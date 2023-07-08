@@ -8,8 +8,8 @@ const ContactList = ({ contacts, removeContact }) => {
       {contacts.map(contact => {
         return (
           <li className={css.liContact} key={contact.id}>
-            <span>{contact.name} </span>
-            <span>{contact.number}:</span>
+            <span>{contact.name}: </span>
+            <span>{contact.number}</span>
 
             <button
               className={css.listBtn}
