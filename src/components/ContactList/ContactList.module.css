@@ -1,0 +1,24 @@
+.listBox {
+  margin-right: auto;
+  margin-left: auto;
+  width: 350px;
+  margin-top: 20px;
+}
+
+.listBtn {
+  padding: 5px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: #bd99d8;
+  box-shadow: 2px 2px 3px 3px #a957c5;
+  border: 1px solid #7b2697;
+  margin-left: 10px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.listBtn:hover {
+  background-color: #9151c3;
+}
+.liContact {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
